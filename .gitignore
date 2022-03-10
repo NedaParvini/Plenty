@@ -1,20 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 node_modules
 
-<<<<<<< HEAD
 .DS_Store
 
 .env
 node_modules
-=======
-DS_Store
->>>>>>> a05593db... gitignore
-=======
-node_modules
->>>>>>> 8526ae34... gitignore again
-=======
-node_modules
-
-.DS_Store
->>>>>>> 900b423a... gitignore updated
