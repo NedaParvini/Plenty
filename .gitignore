@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 node_modules
 
 <<<<<<< HEAD
@@ -12,3 +13,8 @@ DS_Store
 =======
 node_modules
 >>>>>>> 8526ae34... gitignore again
+=======
+node_modules
+
+.DS_Store
+>>>>>>> 900b423a... gitignore updated
