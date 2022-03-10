@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 
 <<<<<<< HEAD
@@ -8,3 +9,6 @@ node_modules
 =======
 DS_Store
 >>>>>>> a05593db... gitignore
+=======
+node_modules
+>>>>>>> 8526ae34... gitignore again
