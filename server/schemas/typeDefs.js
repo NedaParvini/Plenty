@@ -15,12 +15,12 @@ const typeDefs = gql`
 
   type Recipe {
     _id: ID
-    # // add more here
+    # // add more here- depends on API
   }
 
   type SavedRecipes {
     recipeId: String
-    # // add more here
+    # // add more here- depends on API
   }
 
   type Auth {
