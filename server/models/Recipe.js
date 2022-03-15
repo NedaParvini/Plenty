@@ -14,7 +14,7 @@ defaultOption.text = 'Choose Ingredient';
 dropdown.add(defaultOption);
 dropdown.selectedIndex = 0;
 
-const url = 'www.themealdb.com/api/json/v1/1/list.php?i=list';
+const url = REACT_APP_API;
 
 fetch(url)  
   .then(  
