@@ -29,8 +29,8 @@ function Navbar() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/favorites">
-                    Favorites
+                  <NavLink className="nav-link" to="/form">
+                    Form
                   </NavLink>
                 </li>
               </ul>
