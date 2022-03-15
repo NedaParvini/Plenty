@@ -6,14 +6,21 @@ const typeDefs = gql`
     username: String
     email: String
     recipeCount: Int
-    recipes: [Recipe]
+    savedRecipes: [Recipe]
+  }
+
+  type Query {
+    me: User
   }
 
   type Recipe {
     _id: ID
-    recipeText: String
-    createdAt: String
-    username: String
+    # // add more here- depends on API
+  }
+
+  type SavedRecipes {
+    recipeId: String
+    # // add more here- depends on API
   }
 
   type Auth {
@@ -21,18 +28,11 @@ const typeDefs = gql`
     user: User
   }
 
-  type Query {
-    me: User
-    users: [User]
-    user(username: String!): User
-    recipe(username: String): [Recipe]
-    recipe(_id: ID!): Recipe
-  }
-
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    addRecipe(recipeText: String!): Thought
     login(email: String!, password: String!): Auth
+    saveRecipe(input: SavedRecipes!): User
+    removeRecipe(recipeId: String!): User
   }
 `;
 
