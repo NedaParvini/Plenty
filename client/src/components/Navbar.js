@@ -2,13 +2,14 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 
 
+
 function Navbar() {
     return (
         <div className="navigation">
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <div className="container">
-            <NavLink className="navbar-brand" to="/">
-              Plenty
+            <NavLink className="navbar-brand" to="/" >
+            Plenty
             </NavLink>
             <div>
               <ul className="navbar-nav ml-auto">
@@ -36,9 +37,10 @@ function Navbar() {
               </ul>
             </div>
           </div>
-        </nav>
+           </nav>
       </div>
+      
     );
   }
-
+  
 export default Navbar;
