@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.nav-item{
+  
+    border-color: rgba(var(--brds,var(--color_15)),var(--alpha-brds,1));
+    background-color: blueviolet;
+    color:white;
+
+
+
+}
+#homebackg{
+  background-image: url(../public/images/bg.jpg);
+  background-repeat: no-repeat center fixed;
+  background-size: cover;
+  min-height: 100vh;
 }
