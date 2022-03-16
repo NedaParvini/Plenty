@@ -6,12 +6,12 @@ import Logo from '../../src/logo.png'
 function Navbar() {
     return (
         <div className="navigation">
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav className="navbar navbar-expand navbar-dark">
           <div className="container">
-            <NavLink className="navbar-brand" to="/" >
-            <img  src={Logo}  />
+            <NavLink class="logoee" to="/" >
+            <img src={Logo} />
             </NavLink>
-            <div>
+            <div >
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/">
