@@ -23,9 +23,9 @@ ReactDOM.render(
       <Route path="/favorites" element={<Favorites />}>
       </Route>
     </Routes>
-    <Route path="/search" element={<Search />} />
     <Footer />
   </Router>,
+    
 
   document.getElementById("root")
 );

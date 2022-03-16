@@ -9,11 +9,11 @@ const typeDefs = gql`
     recipes: [Recipe]
   }
 
-  type Recipe {
-    _id: ID
-    recipeText: String
-    createdAt: String
-    username: String
+  type meals {
+    idIngredient: ID
+    strIngredient: String
+    strDescription: String
+    strType: String
   }
 
   type Auth {
