@@ -11,12 +11,13 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    user: User
   }
 
-  type Recipe {
-    _id: ID
-    # // add more here- depends on API
-  }
+  # type Recipe {
+  #   _id: ID
+  #   # // add more here- depends on API
+  # }
 
   # type SavedRecipes {
   #   recipeId: String
