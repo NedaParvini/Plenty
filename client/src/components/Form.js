@@ -39,11 +39,11 @@ function Form() {
   const [selectedAssignee, setSelectedAssignee] = useState(null);
   const onChange = event => setSelectedAssignee(event.value);
   return (
-    <div className="favorites">
+    <div class="form">
       <div class="container">
-        <h1 className="text-center mt-3">Form</h1>
-        <form className="k-form k-my-8">
-      <label className="k-label k-mb-3">Task Assignee</label>
+        <h1 >Form</h1>
+        <form >
+      <label className="k-label k-mb-3">Choose your ingredients</label>
       <ComboBox
         data={assignees}
         value={selectedAssignee}
