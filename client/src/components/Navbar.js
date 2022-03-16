@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-
+import Logo from '../../src/logo.png'
 
 
 function Navbar() {
@@ -9,7 +9,7 @@ function Navbar() {
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <div className="container">
             <NavLink className="navbar-brand" to="/" >
-            Plenty
+            <img  src={Logo}  />
             </NavLink>
             <div>
               <ul className="navbar-nav ml-auto">
