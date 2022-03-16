@@ -2,7 +2,7 @@ import React from "react";
 function Home() {
   return (
     <div className="home" id="homebackg">
-      <div class="container">
+      <div class="containerrr">
         
         <container class="contclass">
           <div>
@@ -12,7 +12,11 @@ function Home() {
             dinner, this app is the perfect Meal Assistant!
           </div>
           </container>
+          
           <container class="contclass2"><div></div>
+        </container>
+        
+          <container class="contclass3"><div></div>
         </container>
       </div>
     </div>
