@@ -39,8 +39,8 @@ function Form() {
   const [selectedAssignee, setSelectedAssignee] = useState(null);
   const onChange = event => setSelectedAssignee(event.value);
   return (
-    <div class="form">
-      <div class="container">
+    <div className="form">
+      <div className="container">
         <h1 >Form</h1>
         <form >
       <label className="k-label k-mb-3">Choose your ingredients</label>
