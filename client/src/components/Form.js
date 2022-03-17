@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 //import { ComboBox } from "@progress/kendo-react-dropdowns";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
-import '@progress/kendo-theme-default/dist/all.css'; 
-
+import '@progress/kendo-theme-default/dist/all.css';
 function Form() {
   const assignees = [
     {
@@ -39,14 +38,13 @@ function Form() {
   ];
   //added here
   useEffect(() => {
-    // api to call ingredients 
-    // set ingredients to api results 
+    // api to call ingredients
+    // set ingredients to api results
   }, []) // DO NOT DELETE THE EMPTY ARRAY!!!! LEAVE IT THERE!!!!!!!!!!
   const ingredients = ['chicken', 'fish', 'pork']
   //const [ingredients, setIngredients] = useState([])
   const [selectedIngredients, setSelectedIngredients] = useState([])
   const onIngredientChange = event => setSelectedIngredients([...event.value])
-
   const [selectedAssignee, setSelectedAssignee] = useState(null);
   const onChange = event => setSelectedAssignee(event.value);
   // on submit function/ take selected ingredients and send it to our other api, then render results.
@@ -70,5 +68,4 @@ function Form() {
     </div>
   );
 }
-
 export default Form;
