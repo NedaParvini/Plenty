@@ -19,8 +19,7 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/form" element={<Form />}>
-      </Route>
+      <Route path="/form" element={<Form />}/>
     </Routes>
     <Footer />
   </Router>,
