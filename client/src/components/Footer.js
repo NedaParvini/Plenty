@@ -4,8 +4,8 @@ import React from 'react';
 function Footer() {
   return (
     <div className="footer">
-    <div class="container">
-      <h1 className="text-center mt-3">Footer</h1>
+    <div className="container">
+      <h1 className="ft">© 2022 All rights reserved by PLENTY Group.</h1>
     </div>
   </div>
   );

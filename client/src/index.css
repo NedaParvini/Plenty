@@ -15,9 +15,11 @@ code {
 .nav-item{
   
     border-color: rgba(var(--brds,var(--color_15)),var(--alpha-brds,1));
-    background-color: blueviolet;
-    color:white;
-
+    background-color: #b1a5a5;
+    color:black;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 20px;
 
 
 }
@@ -26,4 +28,160 @@ code {
   background-repeat: no-repeat center fixed;
   background-size: cover;
   min-height: 100vh;
+  background-attachment: fixed;
 }
+.nav-link{
+  color:black;
+}
+
+.contclass{
+  background-color: rgb(7, 7, 7);
+  /* background-image: url(../public/images/khl.jpg); */
+  float:left;
+  width: 300px;
+  height:400px;
+  color:#ffffff;
+  margin:10px;
+  padding: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  justify-content:baseline ;
+}
+  
+  .contclassF{
+    background-blend-mode: normal;
+    float:left;
+    width: 100vw;
+    height:500px;
+    
+        
+  }
+  
+  
+
+.contclass2{
+  background-color:#ffffff;
+  background-image: url(../public/images/healthy.jpg);
+  float:left;
+  width: 300px;
+  height:400px;
+  color:#000000;
+  margin:10px;
+  padding: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  justify-content:baseline ;
+  background-repeat: no-repeat;
+  
+}
+  
+.contclass3{
+  background-color: black;
+  background-image: url(../public/images/pizzacutter.jpg);
+  float:left;
+  width: 450px;
+  height:400px;
+  color:#000000;
+  margin:10px;
+  padding: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  justify-content:baseline ;
+  
+}
+.contclass4{
+  background-color: black;
+  background-image: url(../public/images/pasta.jpg);
+  width: 400px;
+  height:400px;
+  color:#000000;
+  margin:10px;
+  padding: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  justify-content:baseline ;
+  float: left;
+  
+}
+.contclass5{
+  background-image: url(../public/images/strawberry.jpg);
+  width: 300px;
+  height:400px;
+  color:#b1a5a5;
+  margin:10px;
+  padding: 100px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 26px;
+  justify-content:baseline; 
+  float:left;
+   
+}
+.contclass6{
+  background-color: black;
+  background-image: url(../public/images/khl.jpg);
+  float:left;
+  width: 300px;
+  height:400px;
+  color:#000000;
+  margin:10px;
+  padding: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  justify-content:baseline ;
+  
+}
+.ft{
+  margin-left: auto;
+  margin-right:auto;
+  padding: 10;
+  font-size: 12px;
+  align-content: center;
+  
+}
+.containerrr{
+  overflow: scroll;
+}
+.aboutclass{
+  
+  background-image: url(../public/images/grocher.jpg);
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 22px;
+  min-height: 100vh;
+  justify-content: baseline;
+  
+}
+#aboutus_content{
+  background-color: #ffffff;
+  width:500px;
+  height:400px;
+  padding: 40px;
+
+}
+.contactclass{
+  background-color: #ffffff;
+  width:900px;
+  min-height: 100vh;
+  padding: 40px;
+}
+.form{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+  width: 600px;
+  background-color: #b1a5a5;
+  min-height: 700px;
+}
+.menubox{
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.logoee{
+  float:left;
+  
+}
+@media (min-width: 768px) and (max-width: 1096px) {
+  .text_column {
+    width: 100%;
+  }
+  }

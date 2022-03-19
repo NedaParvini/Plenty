@@ -18,7 +18,7 @@ const resolvers = {
     // users: async () => {
     //   return User.find()
     //     .select('-__v -password')
-    //     .populate('recipes')
+    //     // .populate('recipes')
     // },
     user: async (parent, { username }) => {
       return User.findOne({ username })
@@ -59,33 +59,33 @@ const resolvers = {
       return { token, user };
     },
 
-    saveRecipe: async (parent, { input }, context) => {
-      if (context.user) {
-          const updatedUser = await User.findOneandUpdate(
-              { _id: context.user._id },
-              { $addToSet: { savedRecipes: input } },
-              { new: true, runValidators: true }
-          )
+    // saveRecipe: async (parent, { input }, context) => {
+    //   if (context.user) {
+    //       const updatedUser = await User.findOneandUpdate(
+    //           { _id: context.user._id },
+    //           { $addToSet: { savedRecipes: input } },
+    //           { new: true, runValidators: true }
+    //       )
 
-          return updatedUser;
-      }
+    //       return updatedUser;
+    //   }
 
-      throw new AuthenticationError('Not logged in!')
-    },
+    //   throw new AuthenticationError('Not logged in!')
+    // },
 
-    removeRecipe: async (parent, { recipeId }, context) => {
-      if (context.user) {
-          const updatedUser = await User.findOneandUpdate(
-              { _id: context.user._id },
-              { $pull: { savedRecipes: { recipeId: recipeId } } },
-              { new: true }
-          )
+    // removeRecipe: async (parent, { recipeId }, context) => {
+    //   if (context.user) {
+    //       const updatedUser = await User.findOneandUpdate(
+    //           { _id: context.user._id },
+    //           { $pull: { savedRecipes: { recipeId: recipeId } } },
+    //           { new: true }
+    //       )
 
-          return updatedUser;
-      }
+    //       return updatedUser;
+    //   }
 
-      throw new AuthenticationError("Couldn't find a user with this id!");
-    }
+    //   throw new AuthenticationError("Couldn't find a user with this id!");
+    // }
     
   }
 };
