@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-import axios from "axios";
+
 function Form() {
   //added here
   useEffect(() => {
@@ -18,12 +18,12 @@ function Form() {
     .catch(error => {
       console.log(error)
     })
-    // set ingredients to api results
+    
 
   }, []) // DO NOT DELETE THE EMPTY ARRAY!!!! LEAVE IT THERE!!!!!!!!!!
 
 
-  //const ingredients = ['chicken', 'fish', 'pork']
+  
   const [ingredients, setIngredients] = useState([])
   const [selectedIngredients, setSelectedIngredients] = useState([])
   const onIngredientChange = event => setSelectedIngredients([...event.value])
@@ -35,6 +35,7 @@ function Form() {
     <div className="form">
       <div className="container">
         <h1>Form</h1>
+        {/* HERE IS THE CALL BACK FROM THE SELECTED LIST AND RECIPE RESULTS */}
     <form onSubmit={e => e.preventDefault()}>
       <label className="k-label k-mb-3">Choose your ingredients</label>
       <MultiSelect data={ingredients} value={selectedIngredients} onChange={onIngredientChange} autoClose = {false}></MultiSelect>
