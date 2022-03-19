@@ -61,7 +61,7 @@ Deployed to Heroku
 
 ## Preview
 
-![Screenshot](plenty.jpg) 
+![Screenshot](./client/public/images/plenty.jpg) 
 
 
 
