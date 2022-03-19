@@ -10,7 +10,7 @@ function Contact() {
         <div class="contactclass">
         {/* {<img src={Bitmoji} alt="PLENTY GROUP" height={200} width={200} />} */}
         
-       <img className="img-hover-zoom dessertSumImg w-100" src={Bitmoji}  />
+       <img className="img-hover-zoom dessertSumImg w-100" src={Bitmoji} alt="Ourteam" />
           <p>
             <a href="https://github.com/analuciarojas/Plenty/tree/main">
               PLEASE CLICK HERE
