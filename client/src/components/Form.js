@@ -1,13 +1,14 @@
-import React, { useEffect, createContext } from "react";
+import React, { useEffect } from "react";
 //import { ComboBox } from "@progress/kendo-react-dropdowns";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-import Results from "./Results";
+import {Link} from 'react-router-dom';
+
 
 function Form() {
   //added here
-  
+
   useEffect(() => {
     // api to call ingredients
     fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
@@ -26,29 +27,27 @@ function Form() {
   const [selectedAssignee, setSelectedAssignee] = useState(null);
   const onChange = event => setSelectedAssignee(event.value);
   const [meals, setMeals] = useState([])
-  const Name = createContext();
-
   // on submit function/ take selected ingredients and send it to our other api, then render results.
+
   return (
     <div className="form">
       <div className="container">
         <h1>Form</h1>
         {/* HERE IS THE CALL BACK FROM THE SELECTED LIST AND RECIPE RESULTS */}
-    <form onSubmit={e => e.preventDefault()}>
+    <form>
       <label className="k-label k-mb-3">Choose your ingredients</label>
       <MultiSelect data={ingredients} value={selectedIngredients} onChange={onIngredientChange} autoClose = {false}></MultiSelect>
-      <a href="/results" type="button" onClick={ () => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredients.join(',')}`)
+      <Link to={{
+    pathname: "/results",
+    state: selectedIngredients // your data array of objects
+  }} onClick={ () => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredients.join(',')}`)
     .then(response => response.json())
     .then(recipes => {
       console.log(recipes)
       setMeals(recipes.meals)
     })
-    .then(<Name.Provider value={
-      "ana"
-    }>
-    <Results/>
-    </Name.Provider>)
-    .catch(error => console.log(error))}>Submit</a>
+    .catch(error => console.log(error))}
+    >Submit</Link>
       {
     meals !== undefined && meals.length > 0
     ? meals.map(meal => (

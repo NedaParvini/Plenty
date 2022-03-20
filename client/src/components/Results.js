@@ -1,20 +1,16 @@
 import React from 'react';
-import { Name } from "./Form";
+import { useState } from "react";
 
 
 function Results(props) {
-    var{
-        recipes
-    }=props; 
-    
-    console.log("again"+recipes);
+   
+    const [meals, setMeals] = useState([])
+
+    console.log(props.location.state);
 
   return (
-    <Name.Consumer>
-    {(fname) => {
-      return <h1>My Name is {fname}</h1>;
-    }}
-  </Name.Consumer>
+   <div>ana</div>
+    
   );
 }
 
