@@ -1,25 +1,11 @@
 import React, { useEffect } from "react";
-import Result from './Results';
-
 //import { ComboBox } from "@progress/kendo-react-dropdowns";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-function Form(props) {
+function Form() {
   //added here
-  var {
-    onResult, selectedResult
-  } = props;
-  [onResult, selectedResult] = useState(false);
-
-  function handleOnClick(target) {
-    selectedResult(false);
-
-    if (target === 0) {
-      selectedResult(true);
-    }
-  }
-
+  
   useEffect(() => {
     // api to call ingredients
     fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
@@ -47,8 +33,7 @@ function Form(props) {
     <form onSubmit={e => e.preventDefault()}>
       <label className="k-label k-mb-3">Choose your ingredients</label>
       <MultiSelect data={ingredients} value={selectedIngredients} onChange={onIngredientChange} autoClose = {false}></MultiSelect>
-      <button onClick={() => handleOnClick(0)}>Submit</button>
-      {onResult ? (<Result />):("")}
+     <a href="/results" type="button">Submit</a>
       
     </form>
       </div>

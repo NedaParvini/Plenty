@@ -1,6 +1,27 @@
 import React from "react";
 
 function Login() {
+    const loginFormHandler = async function (event) {
+        event.preventDefault();
+      
+        const emailEl = document.querySelector("#email-input-login");
+        const passwordEl = document.querySelector("#password-input-login");
+      
+        const response = await fetch("/api/user/login", {
+          method: "POST",
+          body: JSON.stringify({
+            email: emailEl.value,
+            password: passwordEl.value,
+          }),
+          headers: { "Content-Type": "application/json" },
+        });
+      
+        if (response.ok) {
+          document.location.replace("/dashboard");
+        } else {
+          alert("Failed to login");
+        }
+      };
 
     return (
     <div class="row" id="container" >
@@ -20,7 +41,7 @@ function Login() {
   </div>
         </div>
         <div class="card-action">
-    <button type="submit" id="login-btn" class="btn">Login!</button>
+    <button type="submit" id="login-btn" class="btn" onClick={() => loginFormHandler()}>Login!</button>
     <a type="button" class="btn" href="/signup">Sign up</a>
         </div>
       </div>
