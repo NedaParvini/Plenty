@@ -9,11 +9,6 @@ const typeDefs = gql`
     # savedRecipes: [Recipe]
   }
 
-  type Query {
-    me: User
-    user: User
-  }
-
   # type Recipe {
   #   _id: ID
   #   # // add more here- depends on API
@@ -27,6 +22,12 @@ const typeDefs = gql`
   type Auth {
     token: ID!
     user: User
+  }
+
+  type Query {
+    me: User
+    users: [User]
+    user(username: String!): User
   }
 
   type Mutation {
