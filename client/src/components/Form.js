@@ -3,9 +3,8 @@ import React, { useEffect } from "react";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-import {Card, CardGroup} from 'react-bootstrap';
-
-
+import {Card, CardGroup, Button, ListGroupItem, ListGroup} from 'react-bootstrap';
+import { FaHandHoldingHeart } from 'react-icons/fa';
 
 function Form() {
   //added here
@@ -58,13 +57,21 @@ function Form() {
       .then(response => {
         return response.json()
       })
-      .then(foo => console.log(foo)) // this recipe result!!!
+      .then(recipes => {
+        console.log(recipes)
+        setMeals(recipes.meals)
+      })
     }
       }>
         
         
       <Card.Img variant="top" src={`${meal.strMealThumb}`}/>
       <Card.Title>{meal.strMeal}</Card.Title>
+      <ListGroup className="list-group-flush">
+      <ListGroupItem>Nationality: {meal.strArea} </ListGroupItem>
+      <ListGroupItem>Cuisine: {meal.strCategory}</ListGroupItem>
+    </ListGroup>
+      <Button id={`${meal.idMeal}`} variant="primary">Favorite <FaHandHoldingHeart/></Button>
       </div></Card>
       ))
     : null
