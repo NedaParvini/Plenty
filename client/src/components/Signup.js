@@ -18,7 +18,7 @@ function Signup() {
         });
       
         if (response.ok) {
-          document.location.replace("/results");
+          document.location.replace("/form");
         } else {
           alert("Failed to sign up");
         }

@@ -12,7 +12,6 @@ import {
   Form,
   Login,
   Signup,
-  Results, 
 } from "./components";
 
 ReactDOM.render(
@@ -25,7 +24,6 @@ ReactDOM.render(
       <Route path="/form" element={<Form />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/signup" element={<Signup />}/>
-      <Route path="/results" element={<Results />}/>
     </Routes>
     <Footer />
   </Router>,

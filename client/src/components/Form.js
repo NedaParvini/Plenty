@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-import {Link} from 'react-router-dom';
+import {Card, CardGroup} from 'react-bootstrap';
+
 
 
 function Form() {
@@ -34,23 +35,22 @@ function Form() {
       <div className="container">
         <h1>Form</h1>
         {/* HERE IS THE CALL BACK FROM THE SELECTED LIST AND RECIPE RESULTS */}
-    <form>
+    <form onSubmit={e => e.preventDefault()}>
       <label className="k-label k-mb-3">Choose your ingredients</label>
       <MultiSelect data={ingredients} value={selectedIngredients} onChange={onIngredientChange} autoClose = {false}></MultiSelect>
-      <Link to={{
-    pathname: "/results",
-    state: selectedIngredients // your data array of objects
-  }} onClick={ () => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredients.join(',')}`)
+      {console.log(selectedIngredients)}
+      <button type="submit" onClick={ () => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredients.join(',')}`)
     .then(response => response.json())
     .then(recipes => {
       console.log(recipes)
       setMeals(recipes.meals)
     })
     .catch(error => console.log(error))}
-    >Submit</Link>
-      {
+    >Submit</button>
+     <CardGroup> {
     meals !== undefined && meals.length > 0
     ? meals.map(meal => (
+      <Card>
       <div onClick={
       () => {
           console.log('here is meal id: ', meal.idMeal)
@@ -60,11 +60,15 @@ function Form() {
       })
       .then(foo => console.log(foo)) // this recipe result!!!
     }
-      }>{meal.strMeal}
-      </div>
+      }>
+        
+        
+      <Card.Img variant="top" src={`${meal.strMealThumb}`}/>
+      <Card.Title>{meal.strMeal}</Card.Title>
+      </div></Card>
       ))
     : null
-    }
+    }</CardGroup>
     </form>
       </div>
     </div>
