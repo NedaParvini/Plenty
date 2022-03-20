@@ -1,14 +1,23 @@
 import React from 'react';
+import { Name } from "./Form";
 
 
-function Results() {
+function Results(props) {
+    var{
+        recipes
+    }=props; 
+    
+    console.log("again"+recipes);
+
   return (
-    <div>
-    <div className="container">
-      <h1 className="ft">Result</h1>
-    </div>
-  </div>
+    <Name.Consumer>
+    {(fname) => {
+      return <h1>My Name is {fname}</h1>;
+    }}
+  </Name.Consumer>
   );
 }
 
 export default Results;
+
+

@@ -2,10 +2,11 @@ import React from "react";
 
 function Login() {
     const loginFormHandler = async function (event) {
+        
         event.preventDefault();
       
-        const emailEl = document.querySelector("#email-input-login");
-        const passwordEl = document.querySelector("#password-input-login");
+        const emailEl = document.getElementById("#email-input-login");
+        const passwordEl = document.getElementById("#password-input-login");
       
         const response = await fetch("/api/user/login", {
           method: "POST",
@@ -17,7 +18,7 @@ function Login() {
         });
       
         if (response.ok) {
-          document.location.replace("/dashboard");
+          document.location.replace("/form");
         } else {
           alert("Failed to login");
         }
@@ -26,7 +27,7 @@ function Login() {
     return (
     <div class="row" id="container" >
       <form id="login-form" class="card-body col s12 m7">
-      <div class="card" class="center">
+      <div class="center">
           <div class="card-header">
     <h2>Login</h2>
   </div>
