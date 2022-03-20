@@ -10,6 +10,8 @@ import {
   About,
   Contact,
   Form,
+  Login,
+  Signup,
 } from "./components";
 
 ReactDOM.render(
@@ -20,6 +22,8 @@ ReactDOM.render(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/form" element={<Form />}/>
+      <Route path="/login" element={<Login />}/>
+      <Route path="/signup" element={<Signup />}/>
     </Routes>
     <Footer />
   </Router>,
