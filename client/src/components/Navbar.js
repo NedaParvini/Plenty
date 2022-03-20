@@ -9,7 +9,7 @@ function Navbar() {
         <nav className="navbar navbar-expand navbar-dark">
           <div className="container">
             <NavLink class="logoee" to="/" >
-            <img src={Logo} />
+            <img src={Logo} alt="Logo" />
             </NavLink>
             <div >
               <ul className="navbar-nav ml-auto">
@@ -32,6 +32,11 @@ function Navbar() {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/form">
                     Form
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/login">
+                    Log in
                   </NavLink>
                 </li>
               </ul>

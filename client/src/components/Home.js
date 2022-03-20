@@ -2,41 +2,43 @@ import React from "react";
 function Home() {
   return (
     <div className="home" id="homebackg">
-      <div class="containerrr">
-        <container className="contclassF"></container>
-        <container className="contclass">
-          <div>
-            This application is built to help you find lots of recipes based on
-            the ingredients you choose.
+      <div className="containerrr">
+        <div className="contclassF"></div>
+        <div className="contclass">
+          This application is built to help you find lots of recipes based on
+          the ingredients you choose.
+        </div>
+        <div className="contclass3">
           </div>
-        </container>
-
-        <container className="contclass2">
-          <div>
-            
-          </div>
-        </container>
-
-        <container className="contclass3">
-          <div></div>
-        </container>
-
-        <container className="contclass4">
-          <div></div>
-        </container>
-
-        <container className="contclass5">
-          <div>MOST FAMOUS RECIPES</div>
-        </container>
-
-        <container className="contclass6">
-          <div>If you have a full refrigerator or pantry but still don’t know what
-            to cook for breakfast, lunch or dinner, this app is the perfect Meal
-            Assistant!</div>
-        </container>
-
       </div>
-    </div>
+
+      <div className="containerrr2">
+        <div className="contclass2">
+          <div></div>
+        </div>
+       <div className="contclass6">
+       <div>
+            If you have a full refrigerator or pantry but still don’t know what
+            to cook for breakfast, lunch or dinner, this app is the perfect Meal
+            Assistant!
+        </div>
+        
+       </div>
+
+        <div className="contclass5">
+          <div>MOST FAMOUS RECIPES</div>
+        </div>
+
+        {/* <container className="contclassF"></container>
+        <container className="contclassF"></container> */}
+
+        <div className="containerrr2">
+        {/* <div className="contclass4"> */}
+          <div></div>
+        </div>  
+        </div>
+      </div>
+    // </div>
   );
 }
 
