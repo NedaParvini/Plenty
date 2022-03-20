@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Result() {
+function Results() {
   return (
     <div>
     <div className="container">
@@ -11,4 +11,4 @@ function Result() {
   );
 }
 
-export default Result;
+export default Results;
