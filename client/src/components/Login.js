@@ -1,4 +1,7 @@
 import React from "react";
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 function Login() {
     const loginFormHandler = async function (event) {
@@ -25,25 +28,25 @@ function Login() {
       };
 
     return (
-    <div class="row" id="container" >
-      <form id="login-form" class="card-body col s12 m7">
-      <div class="center">
-          <div class="card-header">
+    <div className="row" id="container" >
+      <form id="login-form" className="card-body col s12 m7">
+      <div className="card center">
+          <div className="card-header">
     <h2>Login</h2>
   </div>
-        <div class="card-content">
+        <div className="card-content">
             <div>
-    <label class="form-label" for="email-input-login">Email</label>
-    <input type="text" class="form-input" id="email-input-login" />
+    <label className="form-label" for="email-input-login">Email</label>
+    <input type="text" className="form-input" id="email-input-login" />
   </div>
   <div>
-    <label for="password-input-login" class="form-label">Password</label>
-    <input type="password" id="password-input-login" class="form-input"/>
+    <label for="password-input-login" className="form-label">Password</label>
+    <input type="password" id="password-input-login" className="form-input"/>
   </div>
         </div>
-        <div class="card-action">
-    <button type="submit" id="login-btn" class="btn" onClick={() => loginFormHandler()}>Login!</button>
-    <a type="button" class="btn" href="/signup">Sign up</a>
+        <div className="card-action">
+    <button type="submit" id="login-btn" className="btn" onClick={() => loginFormHandler()}>Login!</button>
+    <a type="button" className="btn" href="/signup">Sign up</a>
         </div>
       </div>
     </form>
