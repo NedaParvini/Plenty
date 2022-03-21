@@ -3,8 +3,9 @@ import React, { useEffect } from "react";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-import {Card, Container, Button, ListGroupItem, ListGroup} from 'react-bootstrap';
+import { Card, Container, Button, ListGroupItem, ListGroup, Row } from 'react-bootstrap';
 import { FaHandHoldingHeart } from 'react-icons/fa';
+import Col from "./Col";
 
 function Form() {
   //added here
@@ -12,14 +13,14 @@ function Form() {
   useEffect(() => {
     // api to call ingredients
     fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
-    .then(response => response.json())
-    .then(norm => {
-      const ingredientsName = norm.meals.map(ing => ing.strIngredient)
-      setIngredients(ingredientsName)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(response => response.json())
+      .then(norm => {
+        const ingredientsName = norm.meals.map(ing => ing.strIngredient)
+        setIngredients(ingredientsName)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }, []) // DO NOT DELETE THE EMPTY ARRAY!!!! LEAVE IT THERE!!!!!!!!!!
   const [ingredients, setIngredients] = useState([])
   const [selectedIngredients, setSelectedIngredients] = useState([])
@@ -34,47 +35,37 @@ function Form() {
       <div className="container">
         <h1>Form</h1>
         {/* HERE IS THE CALL BACK FROM THE SELECTED LIST AND RECIPE RESULTS */}
-    <form onSubmit={e => e.preventDefault()}>
-      <label className="k-label k-mb-3">Choose your ingredients</label>
-      <MultiSelect data={ingredients} value={selectedIngredients} onChange={onIngredientChange} autoClose = {false}></MultiSelect>
-      {console.log(selectedIngredients)}
-      <button type="submit" onClick={ () => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredients.join(',')}`)
-    .then(response => response.json())
-    .then(recipes => {
-      console.log(recipes)
-      setMeals(recipes.meals)
-    })
-    .catch(error => console.log(error))}
-    >Submit</button>
-     <Container xs={2} md={4} className="g-4"> 
-      {
-    meals !== undefined && meals.length > 0 ?
-    meals.map((meal) => (
-      <Card sm='6'>
-      <Card.Img variant="top" src={`${meal.strMealThumb}`}/>
-      <Card.Title onClick={
-      () => {
-          console.log('here is meal id: ', meal.idMeal)
-          fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
-      .then(response => {
-        return response.json()
-      })
-      .then(recipes => {
-        console.log(recipes)
-        setMeals(recipes.meal)
-      })
-    }
-      }>{meal.strMeal}</Card.Title>
-      <ListGroup className="list-group-flush">
-      <ListGroupItem>Nationality: {meal.strArea} </ListGroupItem>
-      <ListGroupItem>Cuisine: {meal.strCategory}</ListGroupItem>
-    </ListGroup>
-      <Button id={`${meal.idMeal}`} variant="primary">Favorite <FaHandHoldingHeart/></Button>
-      </Card>
-      ))
-    : <div></div>
-    }</Container>
-    </form>
+        <form onSubmit={e => e.preventDefault()}>
+          <label className="k-label k-mb-3">Choose your ingredients</label>
+          <MultiSelect data={ingredients} value={selectedIngredients} onChange={onIngredientChange} autoClose={false}></MultiSelect>
+          {console.log(selectedIngredients)}
+          <button type="submit" onClick={() => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredients.join(',')}`)
+            .then(response => response.json())
+            .then(recipes => {
+              console.log(recipes)
+              setMeals(recipes.meals)
+            })
+            .catch(error => console.log(error))}
+          >Submit</button>
+          <Container>
+            {meals !== undefined && meals.length > 0 ?
+              meals.map((meal, index) => { 
+              if(index % 2 === 0) {
+                return (<Row xs={1} md={2} className="g-4">
+                <Col meals={meal}>
+                
+                </Col>
+            </Row>
+            )
+              }
+              return (
+                <Col meals={meal}></Col>
+              )
+              }): <div></div> 
+                }
+    
+        </Container>
+        </form>
       </div>
     </div>
   );
