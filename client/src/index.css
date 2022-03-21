@@ -206,7 +206,6 @@ small, .font_small {font-size: 0.75em;}
   float:left;
   
 }
-
   
   @media screen and (max-width: 350px){
     .containerrr .containerrr2 {
