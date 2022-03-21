@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
@@ -18,7 +18,7 @@ const Login = (props) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log({ ...formState })
+    console.log({ ...formState });
 
     try {
       const { data } = await login({
@@ -31,15 +31,15 @@ const Login = (props) => {
     }
 
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
 
-    document.location.replace('/form');
+    document.location.replace("/form");
   };
-   
+
   return (
-    <div className="row" id="container" >
+    <div className="row" id="container">
       <div id="login-form" className="card-body col s12 m7">
         <div className="card center">
           <div className="card-header">
@@ -47,15 +47,19 @@ const Login = (props) => {
           </div>
           <div className="card-content">
             <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="email"
-                  name="email"
-                  type="email"
-                  id="email-input-login"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
+              Enter your Email :
+              <input
+                className="form-input"
+                placeholder="email"
+                name="email"
+                type="email"
+                id="email-input-login"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <div>
+                <div />
+                Enter your Password:
                 <input
                   className="form-input"
                   placeholder="password"
@@ -65,15 +69,19 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button className="btn" type="submit">Submit</button>
+                <div></div>
+                <button className="btn" type="submit">
+                  Submit
+                </button>
+              </div>
             </form>
-            
           </div>
+
           {error && <div>Login failed</div>}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Login;
