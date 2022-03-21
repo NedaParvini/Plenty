@@ -19,7 +19,8 @@ import {
   Form,
   Login,
   Signup,
-  Results
+  Profile,
+  Results,
 } from "./components";
 
 const httpLink = createHttpLink({
@@ -53,6 +54,7 @@ ReactDOM.render(
       <Route path="/login" element={<Login />}/>
       <Route path="/signup" element={<Signup />}/>
       <Route path="/results" element={<Results />}/>
+      <Route path="/profile" element={<Profile />}/>
       <Route path="/logout"/>
     </Routes>
     <Footer />
