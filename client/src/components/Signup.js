@@ -43,7 +43,7 @@ function Signup() {
               <h2>Signup</h2>
             </div>
             <div className="card-content">
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit}>Enter a Username:
                   <input
                     className="form-input"
                     placeholder="Enter a username"
@@ -52,7 +52,7 @@ function Signup() {
                     id="username-input-signup"
                     value={formState.username}
                     onChange={handleChange}
-                  />
+                  /><div></div>Enter your Email:
                   <input
                     className="form-input"
                     placeholder="Enter your email"
@@ -61,7 +61,7 @@ function Signup() {
                     id="email-input-signup"
                     value={formState.email}
                     onChange={handleChange}
-                  />
+                  /><div></div>Enter your password:
                   <input
                     className="form-input"
                     placeholder="Enter new password"
@@ -70,7 +70,7 @@ function Signup() {
                     id="password-input-signup"
                     value={formState.password}
                     onChange={handleChange}
-                  />
+                  /><div></div>
                   <button className="btn" type="submit" id="signup-btn">Submit</button>
               </form>
               
