@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -7,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
+
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
@@ -20,6 +22,7 @@ const Login = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
     console.log({ ...formState })
     
     try {
@@ -33,17 +36,16 @@ const Login = () => {
     }
 
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
     
     document.location.replace('/profile');
   };
 
-  
 
   return (
-    <div className="row" id="container" >
+    <div className="row" id="container">
       <div id="login-form" className="card-body col s12 m7">
         <div className="card center">
           <div className="card-header">
@@ -51,15 +53,19 @@ const Login = () => {
           </div>
           <div className="card-content">
             <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="email"
-                  name="email"
-                  type="email"
-                  id="email-input-login"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
+              Enter your Email :
+              <input
+                className="form-input"
+                placeholder="email"
+                name="email"
+                type="email"
+                id="email-input-login"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <div>
+                <div />
+                Enter your Password:
                 <input
                   className="form-input"
                   placeholder="password"
@@ -69,15 +75,19 @@ const Login = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button className="btn" type="submit">Submit</button>
+                <div></div>
+                <button className="btn" type="submit">
+                  Submit
+                </button>
+              </div>
             </form>
-            
           </div>
+
           {error && <div>Login failed</div>}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Login;
