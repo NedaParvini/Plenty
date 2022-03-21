@@ -135,8 +135,9 @@ code {
   margin-right:auto;
   padding: 10;
   font-size: 12px;
-  align-content: center;
-  clear:both;
+  text-align: center;
+  
+  
   
 }
 
@@ -206,7 +207,45 @@ small, .font_small {font-size: 0.75em;}
   float:left;
   
 }
+.card-header {
   
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  
+  
+}
+
+.row {
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  
+  
+}
+ .card-content{
+  margin-left: auto;
+  margin-right: auto;
+  
+ } 
+ .btn{
+  background-color: #b1a5a5;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:20px;
+  margin-bottom: 20px;
+ }
+ .form-input{
+   margin-top: 20px;
+ }
+ .middle{
+  margin-left: auto;
+  margin-right: auto;
+ }
+ .card {
+   margin-bottom: 150px;
+ }
   @media screen and (max-width: 350px){
     .containerrr .containerrr2 {
       width: 100%;
