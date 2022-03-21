@@ -38,7 +38,7 @@ const Login = (props) => {
     document.location.replace('/form');
   };
    
-    return (
+  return (
     <div className="row" id="container" >
       <div id="login-form" className="card-body col s12 m7">
         <div className="card center">
@@ -49,6 +49,7 @@ const Login = (props) => {
             <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
+                  placeholder="email"
                   name="email"
                   type="email"
                   id="email-input-login"
@@ -57,6 +58,7 @@ const Login = (props) => {
                 />
                 <input
                   className="form-input"
+                  placeholder="password"
                   name="password"
                   type="password"
                   id="password-input-login"
@@ -71,7 +73,7 @@ const Login = (props) => {
         </div>
       </div>
     </div>
-    );
+  );
 }
 
 export default Login;
