@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
-import {Card, CardGroup, Button, ListGroupItem, ListGroup} from 'react-bootstrap';
+import {Card, Container, Button, ListGroupItem, ListGroup} from 'react-bootstrap';
 import { FaHandHoldingHeart } from 'react-icons/fa';
 
 function Form() {
@@ -46,11 +46,13 @@ function Form() {
     })
     .catch(error => console.log(error))}
     >Submit</button>
-     <CardGroup> {
-    meals !== undefined && meals.length > 0
-    ? meals.map(meal => (
-      <Card>
-      <div onClick={
+     <Container xs={2} md={4} className="g-4"> 
+      {
+    meals !== undefined && meals.length > 0 ?
+    meals.map((meal) => (
+      <Card sm='6'>
+      <Card.Img variant="top" src={`${meal.strMealThumb}`}/>
+      <Card.Title onClick={
       () => {
           console.log('here is meal id: ', meal.idMeal)
           fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
@@ -59,23 +61,19 @@ function Form() {
       })
       .then(recipes => {
         console.log(recipes)
-        setMeals(recipes.meals)
+        setMeals(recipes.meal)
       })
     }
-      }>
-        
-        
-      <Card.Img variant="top" src={`${meal.strMealThumb}`}/>
-      <Card.Title>{meal.strMeal}</Card.Title>
+      }>{meal.strMeal}</Card.Title>
       <ListGroup className="list-group-flush">
       <ListGroupItem>Nationality: {meal.strArea} </ListGroupItem>
       <ListGroupItem>Cuisine: {meal.strCategory}</ListGroupItem>
     </ListGroup>
       <Button id={`${meal.idMeal}`} variant="primary">Favorite <FaHandHoldingHeart/></Button>
-      </div></Card>
+      </Card>
       ))
-    : null
-    }</CardGroup>
+    : <div></div>
+    }</Container>
     </form>
       </div>
     </div>
