@@ -32,7 +32,7 @@ function Signup() {
         console.error(e);
       }
 
-      document.location.replace('/form');
+      document.location.replace('/profile');
     };
 
     return (
@@ -81,31 +81,6 @@ function Signup() {
       </div>
     );
 
-  //   return (
-  //       <div className="row" id="container" >
-  //       <form id="signup-form" className="card-body col s12 m7">
-  //       <div className="card center">
-  //           <div className="card-header">
-  //     <h2>Sign Up</h2>
-  //   </div>
-  //         <div className="card-content">
-  //             <div>
-  //     <label className="form-label" for="email-input-signup">Email</label>
-  //     <input type="text" className="form-input" id="email-input-signup" />
-  //   </div>
-  //   <div>
-  //     <label for="password-input-signup" className="form-label">Password</label>
-  //     <input type="password" id="password-input-signup" className="form-input"/>
-  //   </div>
-  //         </div>
-  //         <div className="card-action">
-  //     <button type="submit" id="signup-btn" className="btn" onClick={() => signupFormHandler()}>Signup!</button>
-  //       <a href="/login" className="btn">Login</a>
-  //         </div>
-  //       </div>
-  //     </form>
-  //   </div>
-  // );
 }
 
 export default Signup;
