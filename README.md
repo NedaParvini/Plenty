@@ -70,7 +70,7 @@ Deployed to Heroku
 
 GITHUB LINK: https://github.com/analuciarojas/Plenty/tree/main
 
-HEROKU LINK: 
+HEROKU LINK: https://plenty-in-the-pantry.herokuapp.com/ 
 
 
 

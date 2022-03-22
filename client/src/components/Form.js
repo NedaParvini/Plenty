@@ -4,7 +4,6 @@ import { MultiSelect } from "@progress/kendo-react-dropdowns";
 import { useState } from "react";
 import '@progress/kendo-theme-default/dist/all.css';
 import { Card, Container, Button, ListGroupItem, ListGroup, Row,Col } from 'react-bootstrap';
-import { FaHandHoldingHeart } from 'react-icons/fa';
 
 function Form() {
   //added here
@@ -79,7 +78,7 @@ function Form() {
                           }
                         }></Card.Text>
                     </Card.Body>
-                      <Button id={`${meal.idMeal}`} variant="primary">Favorite <FaHandHoldingHeart /></Button>
+                      <Button id={`${meal.idMeal}`} variant="primary">Favorite </Button>
                     </Card>
 
                     <Card sm='4' style={style}>
@@ -109,4 +108,3 @@ export default Form;
 //<ListGroupItem>Nationality: {meal.strArea} </ListGroupItem>
 //<ListGroupItem>Cuisine: {meal.strCategory}</ListGroupItem>
 //</ListGroup>
-

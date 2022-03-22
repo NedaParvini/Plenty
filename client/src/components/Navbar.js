@@ -39,6 +39,21 @@ function Navbar() {
                     Log in
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/signup">
+                    Sign up
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/profile">
+                    Profile
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/logout">
+                    Log out
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </div>

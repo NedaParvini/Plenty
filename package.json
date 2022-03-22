@@ -19,9 +19,12 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "apollo-server-express": "^3.6.4",
+    "dotenv": "^16.0.0",
     "graphql": "^16.3.0",
     "graphql-express": "^2.0.5",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "jwt-decode": "^3.1.2"
   }
 }

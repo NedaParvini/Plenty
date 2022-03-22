@@ -4,6 +4,13 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import {
   Navbar,
   Footer,
   Home,
@@ -12,9 +19,30 @@ import {
   Form,
   Login,
   Signup,
+  Profile,
 } from "./components";
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
+  <ApolloProvider client={client}>
   <Router>
     <Navbar />
     <Routes>
@@ -24,9 +52,12 @@ ReactDOM.render(
       <Route path="/form" element={<Form />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/signup" element={<Signup />}/>
+      <Route path="/profile" element={<Profile />}/>
+      <Route path="/logout"/>
     </Routes>
     <Footer />
-  </Router>,
+  </Router>
+  </ApolloProvider>,
 
   document.getElementById("root")
 );
