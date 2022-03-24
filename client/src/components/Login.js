@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
+
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -8,14 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
-=======
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
 
-const Login = (props) => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
->>>>>>> e218ee98... Some styles
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
@@ -29,13 +22,9 @@ const Login = (props) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-<<<<<<< HEAD
+
     console.log({ ...formState })
     
-=======
-    console.log({ ...formState });
-
->>>>>>> e218ee98... Some styles
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -50,19 +39,11 @@ const Login = (props) => {
       email: "",
       password: "",
     });
-<<<<<<< HEAD
     
     document.location.replace('/profile');
   };
 
-  
 
-=======
-
-    document.location.replace("/form");
-  };
-
->>>>>>> e218ee98... Some styles
   return (
     <div className="row" id="container">
       <div id="login-form" className="card-body col s12 m7">

@@ -19,12 +19,8 @@ import {
   Form,
   Login,
   Signup,
-<<<<<<< HEAD:src/index.js
-  Results, 
-=======
   Profile,
   Results,
->>>>>>> 4ac51050... add profile page- doesn't work tho:client/src/index.js
 } from "./components";
 
 const httpLink = createHttpLink({
@@ -58,11 +54,8 @@ ReactDOM.render(
       <Route path="/login" element={<Login />}/>
       <Route path="/signup" element={<Signup />}/>
       <Route path="/results" element={<Results />}/>
-<<<<<<< HEAD:src/index.js
-=======
       <Route path="/profile" element={<Profile />}/>
       <Route path="/logout"/>
->>>>>>> 4ac51050... add profile page- doesn't work tho:client/src/index.js
     </Routes>
     <Footer />
   </Router>

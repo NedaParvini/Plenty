@@ -44,8 +44,6 @@ function Navbar() {
                     Sign up
                   </NavLink>
                 </li>
-<<<<<<< HEAD:src/components/Navbar.js
-=======
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/profile">
                     Profile
@@ -56,7 +54,6 @@ function Navbar() {
                     Log out
                   </NavLink>
                 </li>
->>>>>>> 4ac51050... add profile page- doesn't work tho:client/src/components/Navbar.js
               </ul>
             </div>
           </div>

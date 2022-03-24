@@ -61,8 +61,8 @@ Deployed to Heroku
 
 ## Preview
 
+![Screenshot](./client/public/images/plenty.jpg) 
 
-![plenty](https://user-images.githubusercontent.com/17996569/159208760-d66b4f1c-e3b3-4e09-9030-78363b6e4c9e.jpg)
 
 
 ## Links: 
