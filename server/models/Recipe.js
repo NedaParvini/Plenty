@@ -1,5 +1,11 @@
 // const { Schema, model } = require("mongoose");
+<<<<<<< HEAD
 
+=======
+// let dropdown = document.getElementById("Recipe");
+// dropdown.length = 0;
+// let defaultOption = document.createElement("option");
+>>>>>>> origin/develop
 // defaultOption.text = "Choose your ingredients";
 // dropdown.add(defaultOption);
 // dropdown.selectedIndex = 0;
