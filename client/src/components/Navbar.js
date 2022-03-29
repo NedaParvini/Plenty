@@ -1,66 +1,76 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import Logo from '../../src/logo.png'
+import Logo from '../../src/plentysmall.png'
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 
-function Navbar() {
+
+function Navbars() {
     return (
-        <div className="navigation">
-        <nav className="navbar navbar-expand navbar-dark">
-          <div className="container">
+        
+        <Navbar collapseOnSelect fixed ='top' expand='sm' bg='dark' variant="dark">
+          <Container>
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id='responsive-navbar-nav'>
+         
+          <Nav>
+            
+            
             <NavLink class="logoee" to="/" >
             <img src={Logo} alt="Logo" />
             </NavLink>
-            <div >
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
+         
+            
+           
+           
                   <NavLink className="nav-link" to="/">
                     Home
                     <span className="sr-only">(current)</span>
                   </NavLink>
-                </li>
-                <li className="nav-item">
+                  
+                 
                   <NavLink className="nav-link" to="/about">
                     About
                   </NavLink>
-                </li>
-                <li className="nav-item">
+                
+                  
+                  
                   <NavLink className="nav-link" to="/contact">
                     Contact
                   </NavLink>
-                </li>
-                <li className="nav-item">
+           
                   <NavLink className="nav-link" to="/form">
-                    Form
+                    Search
                   </NavLink>
-                </li>
-                <li className="nav-item">
+               
                   <NavLink className="nav-link" to="/login">
-                    Log in
+                    Login
                   </NavLink>
-                </li>
-                <li className="nav-item">
+               
                   <NavLink className="nav-link" to="/signup">
-                    Sign up
+                    Signup
                   </NavLink>
-                </li>
-                <li className="nav-item">
+               
                   <NavLink className="nav-link" to="/profile">
                     Profile
                   </NavLink>
-                </li>
-                <li className="nav-item">
+              
                   <NavLink className="nav-link" to="/logout">
-                    Log out
+                    Logout
                   </NavLink>
-                </li>
-              </ul>
-            </div>
-          </div>
-           </nav>
-      </div>
+                
+                 
+            
+            </Nav>
+         
+      
+          </Navbar.Collapse>
+          </Container>
+          </Navbar>
+        
+ 
       
     );
   }
   
-export default Navbar;
+export default Navbars; 

@@ -34,7 +34,7 @@ function Form() {
   return (
     <div className="form">
       <div className="container">
-        <h1>Form</h1>
+        <h2>Search for Recipes!</h2>
         {/* HERE IS THE CALL BACK FROM THE SELECTED LIST AND RECIPE RESULTS */}
         <form onSubmit={e => e.preventDefault()}>
           <label className="k-label k-mb-3">Choose your ingredients</label>

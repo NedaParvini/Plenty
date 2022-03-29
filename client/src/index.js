@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {  BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -22,6 +23,7 @@ import {
   Profile,
   Results,
 } from "./components";
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,7 +47,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
   <Router>
+    
     <Navbar />
+    
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -57,6 +61,7 @@ ReactDOM.render(
       <Route path="/profile" element={<Profile />}/>
       <Route path="/logout"/>
     </Routes>
+    
     <Footer />
   </Router>
   </ApolloProvider>,

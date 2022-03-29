@@ -21,8 +21,8 @@ code {
     padding-left: 20px;
     font-size: 20px;
 
-
 }
+
 #homebackg{
   background-image: url(../public/images/bg.jpg);
   background-repeat: no-repeat center fixed;
@@ -250,6 +250,8 @@ small, .font_small {font-size: 0.75em;}
     .containerrr .containerrr2 {
       width: 100%;
     }}
+
+
 
  /* ----------- iPhone 4 and 4S ----------- */
 
