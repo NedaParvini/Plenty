@@ -33,7 +33,7 @@ npm install
 
 ## Usage
 
-npm start &
+npm run develop &
 Deployed to Heroku
 
 
